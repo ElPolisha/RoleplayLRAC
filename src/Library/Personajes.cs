@@ -1,32 +1,57 @@
-
+using System;
+using System.Collections.Generic;
 namespace Library;
 
 public class Personajes
 {
-    private string Nombre = "personaje";
-    private double Vida = 100;
-    public double Daño = 50;
-    public double Defensa = 50;
-
-    public Personajes(string nombre,double vida, double daño, double resistencia)
+    public string nombre = "personaje";
+    public int vida = 100;
+    public int Daño = 8;
+    public int Defensa = 5;
+    public List<Elementos> armas;
+    
+    
+    public int pelear()
     {
-        this.Nombre = nombre;
-        this.Vida = vida;
-        this.Daño = daño;
-        this.Defensa = resistencia;
-        Console.Write($"Su nuevo personaje se llama {Nombre}, nacio con {Daño} puntos de ataque base, {Defensa} puntos de defensa base y {Vida} puntos de vida\n");
+        int dañoactual = this.Daño;
+        foreach (Elementos elemento in armas)
+        {
+            dañoactual += elemento.GetDaño();
+        }
+        return dañoactual;
     }
 
-    public void pelear()
+    public void recibir_ataque(int ataquerecibido)
     {
-        
+        int defensactual = this.Defensa;
+        foreach (Elementos elemento in armas)
+        {
+            defensactual += elemento.GetDefensa();
+        }
+        if (defensactual < ataquerecibido)
+        {
+            this.vida -= ataquerecibido - defensactual;
+            Console.WriteLine($"El elemento {this.nombre} quedo con {this.vida} puntos de salud.");
+        }
     }
 
-    public void escapar()
+    public void equipar_arma(Elementos esto)
     {
-        
+        armas.Add(esto);
+    }
+    public void desequipar_arma(Elementos coso)
+    {
+        if (armas.Contains(coso));
+        {
+            armas.Remove(coso);
+        }
     }
 
-    // public Personajes feijoada = new Personajes(100, 90);
-    // feijoada.Mago()
+    public void curarse()
+    {
+        if (vida <100)
+        {
+            vida = 100;
+        }
+    }
 }

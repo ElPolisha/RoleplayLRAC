@@ -1,24 +1,36 @@
+using System;
+using System.Collections.Generic;
 namespace Library;
 
 public class Elementos
 {
-    private int Durabilidad = int;
-    private int Daño_fisico = int;
-    private double Cantidad = double;
-    private int Magia = int;
-    private int Daño_magico = int;
-    private string Conocimiento_magico = string;
+    public string nombre_arma ;
+    public int defensa_elemento ;
+    public int daño_elemento ;
     
-    public Elementos (int durabilidad, int daño_fisico)
+    public Tipo Tipo { get; private set; }
+    
+    public Elementos (string nombrearma, string tipo, int durabilidad, int daño_fisico)
     {
-        this.Durabilidad = durabilidad;
-        this.Daño_fisico = daño_fisico;
-        Console.Write($"Usted creo un martillo con {durabilidad} durabilidad y {daño_fisico} puntos de daño.\n")
-        return Daño
+        if (!Enum.TryParse(tipo, true, out Tipo tipoEnum))
+        {
+            throw new ArgumentException($"{tipo} no es un valor válido para el enum Tipo.");
+        }
+
+        Tipo = tipoEnum;
+        this.nombre_arma = nombrearma;
+        this.defensa_elemento = durabilidad;
+        this.daño_elemento = daño_fisico;
+        Console.Write($"Usted creo un {nombrearma} con {durabilidad} defensa y {daño_fisico} puntos de daño.\n");
+    }
+    
+    public int GetDefensa()
+    {
+        return this.defensa_elemento;
     }
 
-    public void martillo()
+    public int GetDaño()
     {
-        
+        return this.daño_elemento;
     }
 }

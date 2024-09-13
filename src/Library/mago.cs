@@ -1,31 +1,39 @@
+using System;
+using System.Collections.Generic;
 namespace Library;
 
-public class mago
+public class Mago : Personajes
 {
     private double poder_magico = 88;
-    private string sabiduria = "alta";
-
-    public void combate_magico(Mago elemento)
+    public Libro_Hechizos libro1a = new Libro_Hechizos("libro2s", "Mago", 2,3);
+    public Mago(string nombre)
     {
-        if elemento == baston_magio
+        this.armas = new List<Elementos>();
+        this.nombre = nombre;
+        this.estadisticasdellibro();
+        Console.Write($"Su nuevo personaje se llama {this.nombre}, nacio con {this.Daño} puntos de ataque base, {this.Defensa} puntos de defensa base y {this.vida} puntos de vida\n");
+    }
+
+    public void agregararmamago(Elementos cosa)
+    {
+        if (cosa.Tipo == Tipo.Mago)
         {
-            Console.write($"El mago lanza una bola de fuego y causa {Daño} puntos de daño a su enemigo")
+            armas.Add(cosa);
         }
         else
         {
-            Console.write($"El mago solo solo puede atacar con un elemento valido a su clase.\n")
+            Console.WriteLine($"Solo puede agregar armas de mago, a un mago");
         }
     }
 
-    public void aprender_hechizo(Mago elemento)
+    private void estadisticasdellibro()
     {
-        if elemento == libro_de_magia
-        {
-            Console.Write($"El mago aumenta su sabiduria y aumenta el daño de bola de fuego.\n")
-        }
-        else
-        {
-            Console.Write($"El mago solo puede aumentar su sabiduria con un elemento valido a su clase.\n")
-        }
+        this.Daño = Daño + libro1a.GetDaño();
+        this.Defensa = Defensa + libro1a.GetDefensa();
+    }
+
+    public void Datos()
+    {
+        Console.WriteLine($"Datos:\n Daño:{this.Daño} \nDefensa:{this.Defensa}");
     }
 }
