@@ -3,16 +3,18 @@ namespace Library;
 
 public class Personajes
 {
+    private string Nombre = "personaje";
     private double Vida = 100;
     public double Daño = 50;
-    public double Resistencia = 50 ;
+    public double Defensa = 50;
 
-    public Personajes(double vida, double daño, double resistencia)
+    public Personajes(string nombre,double vida, double daño, double resistencia)
     {
+        this.Nombre = nombre;
         this.Vida = vida;
         this.Daño = daño;
-        this.Resistencia = resistencia;
-        Console.Write($"Su personaje tiene {Daño} puntos de daño, {Resistencia} puntos de resistencia y {Vida} puntos de vida\n");
+        this.Defensa = resistencia;
+        Console.Write($"Su nuevo personaje se llama {Nombre}, nacio con {Daño} puntos de ataque base, {Defensa} puntos de defensa base y {Vida} puntos de vida\n");
     }
 
     public void pelear()
@@ -26,4 +28,5 @@ public class Personajes
     }
 
     // public Personajes feijoada = new Personajes(100, 90);
+    // feijoada.Mago()
 }
