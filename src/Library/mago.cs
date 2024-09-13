@@ -4,23 +4,28 @@ public class mago
 {
     private double poder_magico = 88;
     private string sabiduria = "alta";
-    private double baston = 60;
-    private double libro_magico = 55;
-    
-    public void combate_magico()
+
+    public void combate_magico(Mago elemento)
     {
-        Daño = Daño + poder_magico;
-        Console.Write($"El mago azota con llamaradas a sus enemigos infringiendo {Daño} puntos de daño.\n");
+        if elemento == baston_magio
+        {
+            Console.write($"El mago lanza una bola de fuego y causa {Daño} puntos de daño a su enemigo")
+        }
+        else
+        {
+            Console.write($"El mago solo solo puede atacar con un elemento valido a su clase.\n")
+        }
     }
 
-    public void usar_baston_magico()
+    public void aprender_hechizo(Mago elemento)
     {
-        Daño = Daño + baston;
-        Console.Write($"El mago lanza una esfera de energia infringiendo {Daño} puntos de daño");
-    }
-
-    public void usar_libro_de_magia()
-    {
-        Console.Write($"El mago aumenta su sabiduria utilizando el libro de hechizos.");
+        if elemento == libro_de_magia
+        {
+            Console.Write($"El mago aumenta su sabiduria y aumenta el daño de bola de fuego.\n")
+        }
+        else
+        {
+            Console.Write($"El mago solo puede aumentar su sabiduria con un elemento valido a su clase.\n")
+        }
     }
 }
