@@ -5,7 +5,7 @@ namespace Library;
 public class Mago : Personajes
 {
     private double poder_magico = 88;
-    public Libro_Hechizos libro1a = new Libro_Hechizos("libro2s", "Mago", 2,3);
+    public Libro_Hechizos libro1a = new Libro_Hechizos("Libro Encantado", "Mago", 2,3);
 
     public Mago(string nombre)
     {
