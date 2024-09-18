@@ -30,7 +30,7 @@ public class Personajes
 			}
 		else
 			{
-				Console.WriteLine($"Luego de una ardua batalla entre {atacante.presentarse()} y {atacado.presentarse()} resultando que este quede con con {vida_Restante} puntos de vida\n"); 
+				Console.WriteLine($"Luego de una ardua batalla entre {atacante.presentarse()} y {atacado.presentarse()} resultando que este ultimo quede con con {vida_Restante} puntos de vida\n"); 
 			}
 	}
 

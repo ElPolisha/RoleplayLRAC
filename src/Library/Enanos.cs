@@ -11,7 +11,7 @@ public class Enano : Personajes
     public Cerveza Duff = new Cerveza("Jarra de Cerveza", "Enano", 50, -5);
 
 
-    public Enano(string nombre);
+    public Enano(string nombre)
     {
         this.armas = new List<Elementos>();
         this.nombre = nombre;

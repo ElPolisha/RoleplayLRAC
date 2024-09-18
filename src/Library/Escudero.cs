@@ -6,7 +6,7 @@ namespace Library;
 public class Escudero : Personajes
 {
     private int Armadura = 50;
-    public Escudo Escudo1 = new Escudo("Escudote", "Escudero", 50, 10);
+    public Escudo Escudo1 = new Escudo ("Escudote", "Escudero", 50, 10);
 
     public Escudero(string nombre)
     {

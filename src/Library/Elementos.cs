@@ -21,7 +21,7 @@ public class Elementos
         this.nombre_arma = nombrearma;
         this.defensa_elemento = durabilidad;
         this.daño_elemento = daño_fisico;
-        Console.Write($"Usted creo un {nombrearma} con {durabilidad} defensa y {daño_fisico} puntos de daño.\n");
+        Console.Write($"\nUsted creo un {nombrearma} con {durabilidad} defensa y {daño_fisico} puntos de daño.");
     }
     
     public int GetDefensa()
