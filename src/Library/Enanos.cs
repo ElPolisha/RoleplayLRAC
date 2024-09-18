@@ -16,7 +16,7 @@ public class Enano : Personajes
         this.armas = new List<Elementos>();
         this.nombre = nombre;
         this.estadisticasCerveza();
-        Console.Write($"\n{this.nombre} es un enano que tiene {this.Daño} puntos de ataque, {this.vida} puntos de vida\n");
+        Console.Write($"\n{this.nombre} es un Enano que tiene {this.Daño} puntos de ataque, {this.vida} puntos de vida\n");
     }
 
     public void agregararmaenano(Elementos cosa)
